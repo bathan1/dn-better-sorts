@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
+#include <time.h>
 
 void printarr(int arr[], size_t length) {
   printf("{ ");
@@ -60,14 +62,25 @@ void maxsink(int data[], int index, int num_nodes) {
 void asc_heapsort(int data[], int num_nodes) {
   maxheapify(data, num_nodes);
 
-  for (int i = 0; i < num_nodes; i++) {
+  for (int i = 0; i < num_nodes - 1; i++) {
     premove(data, 0, num_nodes - i);
   }
 }
 
+int* genarr(size_t length) {
+  int* arr_ptr = malloc(length * sizeof(int));
+
+  for (int i = 0; i < length; i++) {
+    *(arr_ptr + i) = rand() % 1000;
+  }
+  return arr_ptr;
+}
+
 int main() {
-  int arr[] = {8, 3, 2, 7, 9, 4};
-  int num_nodes = sizeof(arr) / sizeof(arr[0]);
+  srand(time(NULL));
+  int* arr = genarr(50);
+  int num_nodes = 50;
+
   printf("Array before heapsort:\n");
   printarr(arr, num_nodes);  
   
