@@ -23,27 +23,16 @@ int* genarr(size_t length) {
 
 int main() {
   srand(time(NULL));
-  int* arr = genarr(50);
-  int num_nodes = 50;
+  int length = 4;
+  int arr[] = {163, 334, 381, 34};
 
-  printf("Array before ascending heapsort:\n");
-  printarr(arr, num_nodes);  
-  
-  asc_heapsort(arr, num_nodes);
+  printf("Array before merge_sort:\n");
+  printarr(arr, length); 
 
-  printf("Array after ascending heapsort:\n");
-  printarr(arr, num_nodes);
-  
-  printf("\n");
+  int* merged = merge_sort(arr, length);
 
-  int* arr2 = genarr(50);
-  printf("Array before descending heapsort:\n");
-  printarr(arr2, num_nodes);
-
-  desc_heapsort(arr2, num_nodes);
-
-  printf("Array after descending heapsort:\n");
-  printarr(arr2, num_nodes);
+  printf("Array after merge_sort:\n");
+  printarr(merged, length);
 
   return 0;
 }

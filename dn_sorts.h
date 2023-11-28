@@ -17,4 +17,12 @@ void asc_heapsort(int* data, int num_nodes);
  */
 void desc_heapsort(int* data, int num_nodes);
 
+/**
+ * Merge sort in ascending order.
+ * @param data the array to sort.
+ * @param num_nodes the number of elements in the array.
+ * @return the pointer to the sorted array.
+ */
+int* merge_sort(int* data, int length);
+
 #endif
