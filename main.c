@@ -23,8 +23,8 @@ int* genarr(size_t length) {
 
 int main() {
   srand(time(NULL));
-  int length = 4;
-  int arr[] = {163, 334, 381, 34};
+  int length = 50;
+  int* arr = genarr(length);
 
   printf("Array before merge_sort:\n");
   printarr(arr, length); 
