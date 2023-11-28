@@ -67,6 +67,10 @@ void asc_heapsort(int data[], int num_nodes) {
   }
 }
 
+void desc_heapsort(int data[], int num_nodes) {
+  minheapify(data, num_nodes);
+}
+
 int* genarr(size_t length) {
   int* arr_ptr = malloc(length * sizeof(int));
 
